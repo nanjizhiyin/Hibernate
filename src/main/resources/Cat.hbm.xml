@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!--
+    <hibernate-mapping>一般不去配置，采用默认即可。
+    default-cascade="none"：默认的级联风格，表与表联动。
+    default-lazy="true"：默认延迟加载
+ -->
+<hibernate-mapping>
+
+    <class name="com.example.demo.model.CatEntity" table="Cat" dynamic-insert="true" dynamic-update="true">
+        <!--
+              <id>：定义了该属性到数据库表主键字段的映射。
+              name="userId"：标识属性的名字；
+              column="userId"：表主键字段的名字，如果不填写与name一样；
+           -->
+        <id name="catId">
+            <!-- <generator>：指定主键由什么生成，推荐使用uuid（随机生成唯一通用的表示符，实体类的ID必须是String），
+							   native（让数据库自动选择用什么生成（根据底层数据库的能力选择identity，sequence或hilo中的一种）），
+							   assigned（指用户手工填入，默认）。 -->
+            <generator class="uuid"/>
+        </id>
+        <property name="catName" column="catName"/>
+
+    </class>
+
+</hibernate-mapping>
