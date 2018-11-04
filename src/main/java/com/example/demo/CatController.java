@@ -19,6 +19,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * @author gaojindan
@@ -65,5 +66,17 @@ public class CatController {
         List<CatEntity> tmplist = sqlQuery.list();
 
         return tmplist;
+    }
+
+    @RequestMapping("/get4")
+    public void get4(){
+        Vector v=new Vector(10);
+        while (true) {
+            Object o = new Object();
+            v.add(o);
+        }
+    }
+    public String getStr(){
+        return getStr();
     }
 }

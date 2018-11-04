@@ -30,6 +30,7 @@
         <!-- 格式化SQL -->
         <property name="hibernate.format_sql">true</property>
 
+
         <!-- 注册映射文件 -->
         <mapping resource="Cat.hbm.xml"/>
     </session-factory>
